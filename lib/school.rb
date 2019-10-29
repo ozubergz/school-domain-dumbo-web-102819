@@ -1,31 +1,23 @@
 # code here!
 class School
-  
+    
   attr_reader :name, :student, :grade
-
-  STUDENTS = []
 
   def initialize(name)
     @name = name
+    @roster = {}
   end
 
   def add_student(student, grade)
-    STUDENTS << {grade => student}
-  end
-  
-  def roster
-    hash = {}
-    STUDENTS.each do |item|
-      grade = item.keys[0]
-      student = item[grade]
-      
-      if !hash[grade]
-        hash[grade] = [student]
-      else
-        hash[grade] << student
-      end
+    if(!@roster[grade])
+      @roster[grade] = []
+    else
+      @roster[grade] << student
     end
-    hash
+  end
+
+  def roster
+    @roster
   end
   
 end
