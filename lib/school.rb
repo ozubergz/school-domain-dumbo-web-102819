@@ -18,8 +18,14 @@ class School
     STUDENTS.each do |item|
       grade = item.keys[0]
       student = item[grade]
-      hash[grade] = student
+      
+      if !hash[grade]
+        hash[grade] = [student]
+      else
+        hash[grade] << student
+      end
     end
     hash
   end
+  
 end
