@@ -24,6 +24,12 @@ class School
     @roster
   end
   
-  
+  def sort
+    hash = {}
+    @roster.each do |k, v|
+      hash = {k => v.sort}
+    end
+    hash
+  end
   
 end
