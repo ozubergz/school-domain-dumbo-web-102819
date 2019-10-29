@@ -27,7 +27,7 @@ class School
   def sort
     hash = {}
     @roster.each do |k, v|
-      hash = {k => v.sort}
+      hash[k] = v.sort
     end
     hash
   end
